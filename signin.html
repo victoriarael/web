@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Rael's World</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="team.html">Team</a>
+  <a href="products.html">Products</a>
+  <a href="hobbies.html">Hobbies</a>
+  <a href="contacts.html">Contacts</a>
+  <div class="topnav-right">
+    <a href="signin.html">Sign In</a>
+    <a href="signup.html">Sign Up</a>
+  </div>
+</div>
+
+<div class="header">
+  <h1>Welcome Back</h1>
+  <p>Log in to continue crafting magic ✨</p>
+</div>
+
+<div class="row">
+  <div class="content">
+    <h2>Welcome to a Safe Space</h2>
+    <p>Every sign-in is more than just access — it’s a gentle reminder that you belong here. Whether you're checking in to build, learn, or dream, this space is for you.</p>
+    <p>Thank you for being part of a digital world rooted in compassion, creativity, and community.</p>
+
+    <h2>Learn More About Our Team and Mission</h2>
+    <p>Our mission is to humanize technology. We're building systems that care, tools that help, and a digital space that feels safe and inspiring. Every line of code we write is meant to support real people and real goals.</p>
+  </div>
+
+  <div class="sidebar">
+    <h2>Sign In</h2>
+    <form id="signinForm" action="#" method="post">
+      <input type="text" id="username" placeholder="Your username, beautifully you" required /><br />
+      <input type="password" id="password" placeholder="Your secret key" required /><br />
+      <input type="submit" value="Sign In" />
+      <p><a href="signup.html">Don't have an account? Let’s create magic → Sign Up</a></p>
+    </form>
+
+    <h2>About This Space</h2>
+    <p>We are a team of passionate creators, driven by purpose and empathy. Whether you're a student, developer, or dreamer — there's space for you here.</p>
+    <p>This platform is built with intention: to support, uplift, and empower people with tools that matter. From mental health support to educational platforms, everything we make starts with heart.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>© 2025 Rael's World. All rights reserved.</p>
+  <p>Contact us at <a href="mailto:raelvickie1974@gmail.com">raelvickie1974@gmail.com</a></p>
+</div>
+
+<script>
+  document.getElementById("signinForm").addEventListener("submit", function(e) {
+    const username = document.getElementById("username").value.trim();
+    const usernameRegex = /^[a-zA-Z\s]+$/;
+
+    if (!usernameRegex.test(username)) {
+      alert("Username should only contain letters and spaces.");
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
