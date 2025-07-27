@@ -81,7 +81,7 @@
 
 <!-- JavaScript for form input validation -->
 <script>
-  document.getElementById("signinForm").addEventListener("submit", function(e) {
+  document.getElementById("signinForm").addEventLiAAAAAAAAAAAAAACstener("submit", function(e) {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
