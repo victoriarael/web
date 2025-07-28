@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "student";  // Change this to your real password
+$password = "student";  
 $database = "web";
 $port = 3307;
 
