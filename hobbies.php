@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("includes/header.php"); ?>
 <!-- Main hobbies page content -->
 
 <!-- Page header section -->
@@ -29,7 +29,9 @@
     </ul>
 
     <!-- Hobby-related image -->
-    <img src="images/hob.jpg" alt="Rael enjoying her hobbies" width="200" height="200">
+    <div class="profile-photo">
+      <img src="images/hob.jpg" alt="Rael enjoying her hobbies" width="200" height="200">
+    </div>
 
     <!-- Closing paragraph -->
     <p>
@@ -49,4 +51,4 @@
   </div>
 </div>
 
-<?php include("footer.php"); ?>
+<?php include("includes/footer.php"); ?>

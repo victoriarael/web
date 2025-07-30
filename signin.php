@@ -1,57 +1,28 @@
-<!DOCTYPE html> <!-- Defines the document type and version of HTML -->
-<html lang="en">
-<head>
-  <!-- Character encoding and responsive design setup -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Sign In - Rael's World</title>
-  
-  <!-- Link to external stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-<!-- Navigation bar with links to all main pages -->
-<div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="team.html">Team</a>
-  <a href="products.html">Products</a>
-  <a href="hobbies.html">Hobbies</a>
-  <a href="contacts.html">Contacts</a>
-  <div class="topnav-right">
-    <a href="signin.html" class="active">Sign In</a>
-    <a href="signup.html">Sign Up</a>
-  </div>
-</div>
+<?php include('includes/header.php'); ?>
 
 <!-- Page header -->
 <div class="header">
   <h1>Welcome Back</h1>
-  <p>Log in to continue crafting magic</p>
+  <p>Log in to continue your journey</p>
 </div>
 
-<!-- Two-column layout: main content and sidebar -->
+<!-- Main content layout -->
 <div class="row">
 
-  <!-- Left side: content area with introduction and mission -->
+  <!-- Left content -->
   <div class="content">
-    <h2>Welcome to a Safe Space</h2>
-    <p>Every sign-in is more than just access — it’s a gentle reminder that you belong here. Whether you're checking in to build, learn, or dream, this space is for you.</p>
-    <p>Thank you for being part of a digital world rooted in compassion, creativity, and community.</p>
+    <h2>A Gentle Space to Grow</h2>
+    <p>Every sign-in isn't just about access — it's a quiet moment of returning to something that supports you. Whether you're learning, building, or dreaming — this is your space.</p>
 
-    <h2>Learn More About Our Team and Mission</h2>
-    <p>Our mission is to humanize technology. We're building systems that care, tools that help, and a digital space that feels safe and inspiring. Every line of code we write is meant to support real people and real goals.</p>
+    <h2>What We Believe</h2>
+    <p>Our mission is to humanize the web. Every feature, every page, every project — built with care for real people.</p>
   </div>
 
-  <!-- Right side: sidebar with the login form -->
+  <!-- Right sidebar with sign-in form -->
   <div class="sidebar">
     <h2>Sign In</h2>
-    
-    <!-- Sign-in form with validation -->
-    <form id="signinForm" action="#" method="post" novalidate>
+
+    <form id="signinForm" action="process_signin.php" method="post" novalidate>
       <label for="username">Username</label><br />
       <input type="text" id="username" name="username" placeholder="Enter your username" required /><br />
 
@@ -60,41 +31,29 @@
 
       <input type="submit" value="Sign In" />
 
-      <!-- Link to sign-up page -->
-      <p style="margin-top:10px;">
-        New here? <a href="signup.html">Create your account</a>
+      <p style="margin-top: 10px;">
+        New here? <a href="signup.php">Create your account</a>
       </p>
     </form>
 
-    <!-- Sidebar description -->
-    <h2>About This Space</h2>
-    <p>We are a team of passionate creators, driven by purpose and empathy. Whether you're a student, developer, or dreamer — there's space for you here.</p>
-    <p>This platform is built with intention: to support, uplift, and empower people with tools that matter.</p>
+    <h2>Why This Matters</h2>
+    <p>This platform is built for community — to support, encourage, and empower. You're welcome here, always.</p>
   </div>
 </div>
 
-<!-- Footer with contact info -->
-<div class="footer">
-  <p>© 2025 Rael's World. All rights reserved.</p>
-  <p>Contact: <a href="mailto:raelvickie1974@gmail.com">raelvickie1974@gmail.com</a></p>
-</div>
-
-<!-- JavaScript for form input validation -->
+<!-- Form validation script -->
 <script>
-  document.getElementById("signinForm").addEventLiAAAAAAAAAAAAAACstener("submit", function(e) {
+  document.getElementById("signinForm").addEventListener("submit", function(e) {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
-
     const usernameRegex = /^[a-zA-Z\s]+$/;
 
-    // Validate username contains only letters and spaces
     if (!usernameRegex.test(username)) {
       alert("Please enter a valid username (letters and spaces only).");
       e.preventDefault();
       return;
     }
 
-    // Validate minimum password length
     if (password.length < 4) {
       alert("Password must be at least 4 characters.");
       e.preventDefault();
@@ -102,5 +61,4 @@
   });
 </script>
 
-</body>
-</html>
+<?php include('includes/footer.php'); ?>

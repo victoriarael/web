@@ -1,32 +1,4 @@
-<!DOCTYPE html> <!-- Declare HTML5 document -->
-<html lang="en">
-<head>
-  <!-- Meta settings for encoding and responsive design -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Rael's Full Circle</title>
-  <!-- Link to external CSS for styling -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-  <!-- Top navigation menu -->
-  <div class="topnav">
-    <!-- Page links -->
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="products.html">Products</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a href="contacts.html">Contacts</a>
-
-    <!-- User-related links aligned to the right -->
-    <div class="topnav-right">
-      <a href="signin.html">Sign In</a>
-      <a href="signup.html">Sign Up</a>
-    </div>
-  </div>
+<?php include("includes/header.php"); ?>
 
   <!-- Header section with page title -->
   <div class="header">
@@ -38,7 +10,6 @@
 
     <!-- Main content section -->
     <div class="content">
-      <!-- Introduction paragraph -->
       <p>
         This is a personal space where I share my journey, my passions, and the projects I'm building along the way.
         Whether you're here to learn more about me, explore my work, or simply say hello — welcome!
@@ -69,7 +40,4 @@
     </div>
   </div>
 
-  <!-- Footer with contact info -->
-  <div class="footer">
-    <p>© 2025 Vicky. All rights reserved.</p>
-    <p>Contact me at <a href="mailto:raelvickie1974@gmail.com">raelvickie1974@gmail.com</a
+<?php include("includes/footer.php"); ?>

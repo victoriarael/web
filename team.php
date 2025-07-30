@@ -1,33 +1,4 @@
-<!DOCTYPE html> <!-- Declare HTML5 document -->
-<html lang="en">
-<head>
-  <!-- Basic meta settings for character encoding and responsive behavior -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-  <title>Team - Vicky</title>
-
-  <!-- Link to external stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-<!-- Navigation menu at the top -->
-<div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="team.html">Team</a> <!-- Current page -->
-  <a href="products.html">Products</a>
-  <a href="hobbies.html">Hobbies</a>
-  <a href="contacts.html">Contacts</a>
-
-  <!-- Right-aligned user action links -->
-  <div class="topnav-right">
-    <a href="signin.html">Sign In</a>
-    <a href="signup.html">Sign Up</a>
-  </div>
-</div>
+<?php include('includes/header.php'); ?>
 
 <!-- Page banner/header -->
 <div class="header">
@@ -87,11 +58,4 @@
   </div>
 </div>
 
-<!-- Page footer with contact -->
-<div class="footer">
-  <p>© 2025 Vicky. All rights reserved.</p>
-  <p>Contact us at <a href="mailto:raelvickie1974@gmail.com">raelvickie1974@gmail.com</a></p>
-</div>
-
-</body>
-</html>
+<?php include('includes/footer.php'); ?>
