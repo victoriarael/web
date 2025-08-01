@@ -1,7 +1,8 @@
-<div class="footer">
-  <p>© 2025 Vicky. All rights reserved.</p>
-  <p>Contact us at <a href="mailto:raelvickie1974@gmail.com">raelvickie1974@gmail.com</a></p>
-</div>
+</div> <!-- close container -->
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  <p>&copy; <?php echo date('Y'); ?> MySite. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

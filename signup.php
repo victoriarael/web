@@ -6,48 +6,53 @@
   <p>Sign up and step into a community where code meets compassion</p>
 </div>
 
-<!-- Main layout -->
-<div class="row">
+<!-- Begin main container -->
+<div class="container">
 
-  <!-- Sign-up form -->
-  <div class="content">
-    <h2>Create Your Account</h2>
+  <!-- Main layout row -->
+  <div class="row">
 
-    <form id="signupForm" action="process_signup.php" method="post" novalidate>
-      <label for="fullname">Full Name:</label><br />
-      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required /><br />
+    <!-- Sign-up form -->
+    <div class="content">
+      <h2>Create Your Account</h2>
 
-      <label for="email">Email Address:</label><br />
-      <input type="email" id="email" name="email" placeholder="example@domain.com" required /><br />
+      <form id="signupForm" action="process_signup.php" method="post" novalidate>
+        <label for="fullname">Full Name:</label><br />
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required /><br />
 
-      <label for="dob">Date of Birth:</label><br />
-      <input type="date" id="dob" name="dob" required /><br />
+        <label for="email">Email Address:</label><br />
+        <input type="email" id="email" name="email" placeholder="example@domain.com" required /><br />
 
-      <label for="gender">Gender:</label><br />
-      <select id="gender" name="gender" required>
-        <option value="">-- Select Gender --</option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-        <option value="other">Other</option>
-      </select><br />
+        <label for="dob">Date of Birth:</label><br />
+        <input type="date" id="dob" name="dob" required /><br />
 
-      <label for="password">Password:</label><br />
-      <input type="password" id="password" name="password" placeholder="Choose a strong password" required /><br />
+        <label for="gender">Gender:</label><br />
+        <select id="gender" name="gender" required>
+          <option value="">-- Select Gender --</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="other">Other</option>
+        </select><br />
 
-      <label for="confirmPassword">Confirm Password:</label><br />
-      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-type your password" required /><br />
+        <label for="password">Password:</label><br />
+        <input type="password" id="password" name="password" placeholder="Choose a strong password" required /><br />
 
-      <input type="submit" value="Sign Up" />
-    </form>
-  </div>
+        <label for="confirmPassword">Confirm Password:</label><br />
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-type your password" required /><br />
 
-  <!-- Sidebar with message -->
-  <div class="sidebar">
-    <h2>Why Join?</h2>
-    <p>Rael’s World is more than a website — it’s a creative community. Whether you're a dreamer, developer, or student, you belong here.</p>
-    <p>Expect safe spaces, useful tools, and encouragement for every journey. Let’s build with heart.</p>
-  </div>
-</div>
+        <input type="submit" value="Sign Up" />
+      </form>
+    </div>
+
+    <!-- Sidebar message -->
+    <div class="sidebar">
+      <h2>Why Join?</h2>
+      <p>Rael’s World is more than a website — it’s a creative community. Whether you're a dreamer, developer, or student, you belong here.</p>
+      <p>Expect safe spaces, useful tools, and encouragement for every journey. Let’s build with heart.</p>
+    </div>
+
+  </div> <!-- end row -->
+</div> <!-- end container -->
 
 <!-- Form validation -->
 <script>

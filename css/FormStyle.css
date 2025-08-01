@@ -1,0 +1,61 @@
+/* Form Elements Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+    width: 75%;
+    padding: 10px 18px;
+    margin: 10px 0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 17px;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #b10909;
+    outline: none;
+    box-shadow: 0 0 4px rgba(177, 9, 9, 0.3);
+}
+
+/* Form Buttons Styling */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #b10909;
+    color: #fff;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #8d0808;
+}
+
+/* Responsive Form Elements */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select {
+        width: 100%;
+    }
+}

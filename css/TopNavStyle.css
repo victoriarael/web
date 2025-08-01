@@ -1,23 +1,53 @@
 /* Top Navigation Bar Style */
 /* This is a CSS file for styling a top navigation bar */
 
-.topnav{
+.topnav {
     background-color: #000000;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    flex-wrap: wrap;
 }
+
 .topnav a {
-    float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 17px;
 }
+
 .topnav a:hover {
     background-color: #dddddd;
     color: black;
 }
 
+.topnav-left,
 .topnav-right {
-    float: right;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .topnav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topnav a {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .topnav-left,
+    .topnav-right {
+        width: 100%;
+        justify-content: space-around;
+    }
 }

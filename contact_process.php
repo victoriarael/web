@@ -1,33 +1,38 @@
 <?php
-// Step 1: Connect to the database
-$host = 'localhost';
-$user = 'root';
-$password = 'student'; 
-$database = 'web';
-$port = 3307; //  MySQL is running on port 3307
+$servername = "localhost";
+$username = "root";
+$password = "student";  // your password
+$database = "web";
+$port = 3307;
 
-$conn = new mysqli($host, $user, $password, $database, $port);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database, $port);
 
-// Step 2: Check if connection works
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Step 3: Get data from the form
-$fullname = $conn->real_escape_string($_POST['fullname']);
-$email = $conn->real_escape_string($_POST['email']);
-$message = $conn->real_escape_string($_POST['message']);
+// Escape and collect form data
+$name = $conn->real_escape_string($_POST['name'] ?? '');
+$email = $conn->real_escape_string($_POST['email'] ?? '');
+$subject = $conn->real_escape_string($_POST['subject'] ?? '');
+$message = $conn->real_escape_string($_POST['message'] ?? '');
 
-// Step 4: Save data to messages table
-$sql = "INSERT INTO messages (fullname, email, message)
-        VALUES ('$fullname', '$email', '$message')";
+// Check if all required fields are filled
+if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+    die("All fields are required.");
+}
+
+// Insert into contacts table
+$sql = "INSERT INTO contacts (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Message sent successfully!";
+    header("Location: contacts.php?success=1");
+    exit();
 } else {
     echo "Error: " . $conn->error;
 }
 
-// Step 5: Close connection
 $conn->close();
 ?>

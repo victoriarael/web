@@ -1,80 +1,98 @@
 <?php include 'includes/header.php'; ?>
 
-<!-- Header Section -->
-<div class="header">
-  <h1>Explore Our Book Collection</h1>
-</div>
+<!-- Page Container -->
+<div class="container">
 
-<!-- Main Content -->
-<div class="row">
-  <div class="content">
-    <p>Welcome! We've thoughtfully arranged our books into categories to make browsing easier. Whether you're expanding your skills or seeking personal growth, you're in the right place. Feel free to search or scroll through each section.</p>
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Explore Our Book Collection</h1>
+  </div>
 
-    <!-- Search Input -->
-    <div class="search-box">
-      <input type="text" id="searchInput" onkeyup="searchBook()" placeholder="Search for a book title..." />
+  <!-- Two-column Layout -->
+  <div class="row">
+
+    <!-- Main Content -->
+    <div class="content">
+      <p>
+        Welcome! We've thoughtfully arranged our books into categories to make browsing easier.
+        Whether you're expanding your skills or seeking personal growth, you're in the right place.
+        Feel free to search or scroll through each section.
+      </p>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="searchBook()" placeholder="Search for a book title..." />
+      </div>
+
+      <!-- Coding Books Table -->
+      <h2>Coding Books</h2>
+      <table id="codingTable">
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Price (KES)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Clean Code</td><td>Robert C. Martin</td><td>1500</td></tr>
+          <tr><td>2</td><td>You Don’t Know JS</td><td>Kyle Simpson</td><td>1800</td></tr>
+          <tr><td>3</td><td>The Pragmatic Programmer</td><td>Hunt & Thomas</td><td>2000</td></tr>
+          <tr><td>4</td><td>Refactoring</td><td>Martin Fowler</td><td>1700</td></tr>
+          <tr><td>5</td><td>JavaScript: The Good Parts</td><td>Douglas Crockford</td><td>1600</td></tr>
+          <tr><td>6</td><td>Design Patterns</td><td>Erich Gamma</td><td>1900</td></tr>
+          <tr><td>7</td><td>Cracking the Coding Interview</td><td>Gayle McDowell</td><td>2500</td></tr>
+          <tr><td>8</td><td>Effective JavaScript</td><td>David Herman</td><td>1550</td></tr>
+          <tr><td>9</td><td>Learning PHP, MySQL & JavaScript</td><td>Robin Nixon</td><td>1800</td></tr>
+          <tr><td>10</td><td>HTML & CSS</td><td>Jon Duckett</td><td>1300</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Therapy & Self-Development Books Table -->
+      <h2>Therapy & Self-Development Books</h2>
+      <table id="therapyTable">
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Price (KES)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Atomic Habits</td><td>James Clear</td><td>1200</td></tr>
+          <tr><td>2</td><td>The Power of Now</td><td>Eckhart Tolle</td><td>1400</td></tr>
+          <tr><td>3</td><td>12 Rules for Life</td><td>Jordan Peterson</td><td>1600</td></tr>
+          <tr><td>4</td><td>Daring Greatly</td><td>Brené Brown</td><td>1500</td></tr>
+          <tr><td>5</td><td>Think Like a Monk</td><td>Jay Shetty</td><td>1300</td></tr>
+          <tr><td>6</td><td>Mindset</td><td>Carol S. Dweck</td><td>1350</td></tr>
+          <tr><td>7</td><td>The Four Agreements</td><td>Don Miguel Ruiz</td><td>1100</td></tr>
+          <tr><td>8</td><td>How to Do the Work</td><td>Nicole LePera</td><td>1450</td></tr>
+          <tr><td>9</td><td>The Gifts of Imperfection</td><td>Brené Brown</td><td>1400</td></tr>
+          <tr><td>10</td><td>The Mountain Is You</td><td>Brianna Wiest</td><td>1350</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Add Product Form -->
+      <h2>Add a New Product</h2>
+      <form action="#" method="post">
+        <input type="text" name="product" placeholder="Product Name" required><br>
+        <input type="number" name="quantity" placeholder="Quantity" required><br>
+        <input type="text" name="price" placeholder="Unit Price (KES)" required><br>
+        <input type="submit" value="Add Product">
+      </form>
     </div>
 
-    <!-- Coding Books -->
-    <h2>Coding Books</h2>
-    <table id="codingTable">
-      <thead>
-        <tr>
-          <th>SN</th><th>Book Title</th><th>Author</th><th>Price (KES)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Clean Code</td><td>Robert C. Martin</td><td>1500</td></tr>
-        <tr><td>2</td><td>You Don’t Know JS</td><td>Kyle Simpson</td><td>1800</td></tr>
-        <tr><td>3</td><td>The Pragmatic Programmer</td><td>Hunt & Thomas</td><td>2000</td></tr>
-        <tr><td>4</td><td>Refactoring</td><td>Martin Fowler</td><td>1700</td></tr>
-        <tr><td>5</td><td>JavaScript: The Good Parts</td><td>Douglas Crockford</td><td>1600</td></tr>
-        <tr><td>6</td><td>Design Patterns</td><td>Erich Gamma</td><td>1900</td></tr>
-        <tr><td>7</td><td>Cracking the Coding Interview</td><td>Gayle McDowell</td><td>2500</td></tr>
-        <tr><td>8</td><td>Effective JavaScript</td><td>David Herman</td><td>1550</td></tr>
-        <tr><td>9</td><td>Learning PHP, MySQL & JavaScript</td><td>Robin Nixon</td><td>1800</td></tr>
-        <tr><td>10</td><td>HTML & CSS</td><td>Jon Duckett</td><td>1300</td></tr>
-      </tbody>
-    </table>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Why Books?</h2>
+      <p>Whether you need to boost your skills or find clarity in life, our books guide your journey.</p>
+      <p>Curated with purpose to support both the mind and the mission.</p>
+    </div>
 
-    <!-- Therapy & Self-Development Books -->
-    <h2>Therapy & Self-Development Books</h2>
-    <table id="therapyTable">
-      <thead>
-        <tr>
-          <th>SN</th><th>Book Title</th><th>Author</th><th>Price (KES)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Atomic Habits</td><td>James Clear</td><td>1200</td></tr>
-        <tr><td>2</td><td>The Power of Now</td><td>Eckhart Tolle</td><td>1400</td></tr>
-        <tr><td>3</td><td>12 Rules for Life</td><td>Jordan Peterson</td><td>1600</td></tr>
-        <tr><td>4</td><td>Daring Greatly</td><td>Brené Brown</td><td>1500</td></tr>
-        <tr><td>5</td><td>Think Like a Monk</td><td>Jay Shetty</td><td>1300</td></tr>
-        <tr><td>6</td><td>Mindset</td><td>Carol S. Dweck</td><td>1350</td></tr>
-        <tr><td>7</td><td>The Four Agreements</td><td>Don Miguel Ruiz</td><td>1100</td></tr>
-        <tr><td>8</td><td>How to Do the Work</td><td>Nicole LePera</td><td>1450</td></tr>
-        <tr><td>9</td><td>The Gifts of Imperfection</td><td>Brené Brown</td><td>1400</td></tr>
-        <tr><td>10</td><td>The Mountain Is You</td><td>Brianna Wiest</td><td>1350</td></tr>
-      </tbody>
-    </table>
+  </div> <!-- End of .row -->
 
-    <!-- Product Entry Form -->
-    <h2>Add a New Product</h2>
-    <form action="#" method="post">
-      <input type="text" name="product" placeholder="Product Name" required><br>
-      <input type="number" name="quantity" placeholder="Quantity" required><br>
-      <input type="text" name="price" placeholder="Unit Price (KES)" required><br>
-      <input type="submit" value="Add Product">
-    </form>
-  </div>
-
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Why Books?</h2>
-    <p>Whether you need to boost your skills or find clarity in life, our books guide your journey.</p>
-    <p>Curated with purpose to support both the mind and the mission.</p>
-  </div>
-</div>
+</div> <!-- End of .container -->
 
 <?php include 'includes/footer.php'; ?>
