@@ -1,17 +1,21 @@
 <?php
-include 'dbConnect.php';
+require_once('includes/dbConnect.php');
 
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
-    $sql = "DELETE FROM contacts WHERE id = $id";
+$id = intval($_GET['id'] ?? 0);
+$table = $_GET['table'] ?? '';
 
+$allowed_tables = ['contacts', 'messages', 'signups'];
+if ($id > 0 && in_array($table, $allowed_tables)) {
+    $sql = "DELETE FROM $table WHERE id = $id";
     if ($conn->query($sql) === TRUE) {
-        header("Location: admin_contacts.php?deleted=1");
-        exit;
+        header("Location: view_{$table}.php?deleted=1");
+        exit();
     } else {
         echo "Error deleting record: " . $conn->error;
     }
 } else {
     echo "Invalid request.";
 }
+
+$conn->close();
 ?>
