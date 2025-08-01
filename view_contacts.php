@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: signin.php");
+    exit();
+}
+
 include('includes/header.php');
 require_once('includes/dbConnect.php');
 
@@ -7,36 +13,45 @@ $sql = "SELECT * FROM contacts ORDER BY id DESC";
 $result = $conn->query($sql);
 ?>
 
-<div class="container">
-    <h2>Contact Messages</h2>
+<div class="container mt-5">
+    <h2 class="mb-4">Contact Messages</h2>
 
     <?php if ($result->num_rows > 0): ?>
-        <table border="1" cellpadding="10">
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Subject</th>
-                <th>Message</th>
-                <th>Action</th>
-            </tr>
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <td><?= htmlspecialchars($row['id']) ?></td>
-                    <td><?= htmlspecialchars($row['name']) ?></td>
-                    <td><?= htmlspecialchars($row['email']) ?></td>
-                    <td><?= htmlspecialchars($row['subject']) ?></td>
-                    <td><?= htmlspecialchars($row['message']) ?></td>
-                    <td>
-                        <a href="delete.php?id=<?= $row['id'] ?>&table=contacts" onclick="return confirm('Delete this entry?')">Delete</a>
-                    </td>
-                </tr>
-            <?php endwhile; ?>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($row['id']) ?></td>
+                        <td><?= htmlspecialchars($row['name']) ?></td>
+                        <td><?= htmlspecialchars($row['email']) ?></td>
+                        <td><?= htmlspecialchars($row['subject']) ?></td>
+                        <td><?= htmlspecialchars($row['message']) ?></td>
+                        <td>
+                            <a href="delete.php?id=<?= $row['id'] ?>&table=contacts"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure you want to delete this entry?');">
+                               Delete
+                            </a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
     <?php else: ?>
-        <p>No contact messages found.</p>
+        <div class="alert alert-info">No contact messages found.</div>
     <?php endif; ?>
-
 </div>
 
 <?php

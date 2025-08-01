@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: signin.php");
+    exit();
+}
+
 include('includes/header.php');
 include('includes/dbConnect.php');
 
@@ -7,34 +13,40 @@ $sql = "SELECT * FROM messages ORDER BY submitted_at DESC";
 $result = $conn->query($sql);
 ?>
 
-<div class="container mt-4">
-    <h2>Submitted Messages</h2>
+<div class="container mt-5">
+    <h2 class="mb-4">Submitted Messages</h2>
+
     <?php if ($result->num_rows > 0): ?>
-        <table class="table table-bordered table-striped mt-3">
-            <thead class="thead-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th>Submitted At</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
                     <tr>
-                        <td><?= htmlspecialchars($row['id']) ?></td>
-                        <td><?= htmlspecialchars($row['fullname']) ?></td>
-                        <td><?= htmlspecialchars($row['email']) ?></td>
-                        <td><?= htmlspecialchars($row['message']) ?></td>
-                        <td><?= htmlspecialchars($row['submitted_at']) ?></td>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Submitted At</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while ($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($row['id']) ?></td>
+                            <td><?= htmlspecialchars($row['fullname']) ?></td>
+                            <td><?= htmlspecialchars($row['email']) ?></td>
+                            <td><?= htmlspecialchars($row['message']) ?></td>
+                            <td><?= htmlspecialchars($row['submitted_at']) ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
     <?php else: ?>
-        <p>No messages found.</p>
+        <div class="alert alert-info">No messages found.</div>
     <?php endif; ?>
 </div>
 
-<?php include('includes/footer.php'); ?>
+<?php
+$conn->close();
+include('includes/footer.php');
+?>

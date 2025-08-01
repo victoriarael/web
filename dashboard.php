@@ -1,6 +1,11 @@
-<?php 
-include('includes/header.php'); 
-include('includes/dbConnect.php'); // Ensure the path is correct
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('Location: signin.php');
+    exit();
+}
+include('includes/header.php');
+include('includes/dbConnect.php'); 
 
 // Count totals from database
 $userCount = $conn->query("SELECT COUNT(*) AS total FROM users")->fetch_assoc()['total'];
