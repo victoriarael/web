@@ -2,7 +2,7 @@
 session_start();
 
 // Include DB connection
-require_once 'includes/dbConnect.php'; // remove the echo line from dbConnect.php in production
+require_once('includes/dbConnect.php');
 
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
