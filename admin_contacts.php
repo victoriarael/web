@@ -1,6 +1,6 @@
 <?php 
-include 'dbConnect.php'; 
-include 'includes/header.php'; 
+include('includes/dbConnect.php'); // ✅ FIXED the include statement
+include('includes/header.php'); 
 ?>
 
 <div class="mt-5">
@@ -51,4 +51,4 @@ include 'includes/header.php';
   ?>
 </div>
 
-<?php include 'includes/footer.php'; ?> 
+<?php include 'includes/footer.php'; ?>
