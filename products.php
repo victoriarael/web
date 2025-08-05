@@ -48,7 +48,8 @@
                     <td>{$row['price']}</td>
                     <td>
                       <a href='edit_product.php?id={$row['id']}'>Edit</a> | 
-                      <a href='delete_product.php?id={$row['id']}' onclick=\"return confirm('Are you sure you want to delete this product?')\">Delete</a>
+                     <a href='edit_product.php?id={$row['id']}'>Edit</a>
+
                     </td>
                   </tr>";
             $count++;
